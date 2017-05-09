@@ -10,28 +10,27 @@ Use the Windows instructions for the CF CLI.
 <em>Agenda</em><br/><br/>
 Intro: Pivotal Cloud Foundry (PowerPoint)<br/><br/>
 Session 1: Cloud Native Design, Domain Driven Design, & Microservices (PowerPoint)<br/><br/>
-Session 2: Introducing .NET Core (PowerPoint)
+Session 2: Introducing .NET Core (PowerPoint)<br/>
+<li>Lab 1: Building a .Net Core Application</li>
+<br/><br/>
+Session 3: .NET API with REST (PowerPoint)
 <br/>
-Lab 1: Building a .Net Core Application
-<br/><br/>
-Session 3: Polyglot Persistence with REST (PowerPoint)
-<br/><br/>
-Lab 2: Build a RESTful Web Service with DotNet Web API REST
+<li>Lab 2: Build a RESTful Web Service with DotNet Web API REST</li>
 <br/><br/>
 Session 4: Advancing .NET Core with Steeltoe (PowerPoint)
 <br/>
-Lab 3: Enhancing Boot Application with Metrics
+<li>Lab 3: Logging with the .NET Application</li>
 <br/><br/>
-Session 5: Introducing Spring Cloud Netflix (PowerPoint)
+Session 5: Introducing Service Discovery (PowerPoint)
 <br/><br/>
-Session 6: Spring Cloud Config (PowerPoint)
+Session 6: Configuration Services (PowerPoint)
 <br/>
-Lab 4: Introducing Spring Cloud into Boot Application
+<li>Lab 4: Introducing Data Access into .NET Core Application</li>
 <br/><br/>
-Session 7: Spring Cloud Netflix - Service Discovery & Load Balancing (PowerPoint)
+Session 7: Caching and Session State (PowerPoint)
 <br/>
-Lab 5: Microservice Service Discover and Load Balancing
+<li>Lab 5: Microservice session state handling</li>
 <br/><br/>
-Session 8: Spring Cloud Netflix - Circuit Breakers (PowerPoint)
+Session 8: Circuit Breakers (PowerPoint)
 <br/>
 Lab 6: Microservice Fault Tolerance with Circuit Breakers
