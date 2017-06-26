@@ -11,24 +11,23 @@ Use the Windows instructions for the CF CLI.
 Intro: Pivotal Cloud Foundry (PowerPoint)<br/><br/>
 Session 1: Cloud Native Design, Domain Driven Design, & Microservices (PowerPoint)<br/><br/>
 Session 2: Introduction to the CF CLI
-<li>Lab 2.1: Introduction to Orgs, Spaces, and Roles</li>
-<li>Lab 2.2: Pushing a .NET Core Application</li>
-<li>Lab 2.3: Pushing a .NET Classic Application</li>
-<li>Lab 2.4: Scaling an Application</li>
-<li>Lab 2.5: Mapping Routes</li>
-<li>Lab 2.5: Mapping Routes</li><li>Lab 2.5: Creating and Binding to Services</li>
-<li>Lab 2.5: Mapping Routes</li>
+  <li>Lab 2.1: Introduction to Orgs, Spaces, and Roles</li>
+  <li>Lab 2.2: Pushing a .NET Core Application</li>
+  <li>Lab 2.3: Pushing a .NET Classic Application</li>
+  <li>Lab 2.4: Scaling an Application</li>
+  <li>Lab 2.5: Creating and Binding to Services</li>
+  <li>Lab 2.6: Mapping Routes</li>
 <br/><br/>
 Session 3: .NET Core and PCF (PowerPoint)<br/>
-<li>Lab 3.1: Building and pushing .Net Core MVC Application</li>
-<li>Lab 3.2: Integrating SQL Server using Service Tiles</li>
-<li>Lab 3.3: Integrating Pivotal SSO</li>
+  <li>Lab 3.1: Building and pushing .Net Core MVC Application</li>
+  <li>Lab 3.2: Integrating SQL Server using Service Tiles</li>
+  <li>Lab 3.3: Integrating Pivotal SSO</li>
 <br/><br/>
 Session 4: .NET Classic and PCF (PowerPoint)
-<li>Lab 4.1: Building and pushing .Net 4.6 MVC Application</li>
-<li>Lab 4.2: Integrating SQL Server using Service Tiles</li>
-<li>Lab 4.3: Integrating Pivotal SSO</li>
+  <li>Lab 4.1: Building and pushing .Net 4.6 MVC Application</li>
+  <li>Lab 4.2: Integrating SQL Server using Service Tiles</li>
+  <li>Lab 4.3: Integrating Pivotal SSO</li>
 <br/><br/>
 Session 5: Advancing .NET Core with Steeltoe (PowerPoint)
-<li>Lab 5.1: Implementing Pivotal Config Server</li>
+  <li>Lab 5.1: Implementing Pivotal Config Server</li>
 <br/><br/>
