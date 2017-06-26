@@ -52,7 +52,5 @@ This workshop requires participants to have Visual Studio 2017 installed.  Visua
 -   Demo 7.3: Creating a .NET Classic Build Job for PCF
 -   Demo 7.4: Creating a Deployment Definition for PCF
 -   Demo 7.5: Creating a Blue-Green Deployment Definition for PCF
--	Implementation Guide: [CI/CD Pipelines for VSTS/TFS]()  
---	[Sample Builds](./vsts/builds/)
---	[Sample Deployments](./vsts/deployments/)
-- - -
+-	Implementation Guide: [CI/CD Pipelines for VSTS/TFS](./documents/PivotalTeamFoundationServicesCICD.docx.pdf)  
+
