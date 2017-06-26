@@ -31,3 +31,10 @@ Session 4: .NET Classic and PCF (PowerPoint)
 Session 5: Advancing .NET Core with Steeltoe (PowerPoint)
   <li>Lab 5.1: Implementing Pivotal Config Server</li>
 <br/><br/>
+Session 6: CI-CD Pipelines with Team Services (Demos)
+  <li>Demo 6.1: Setting Up Endpoints for Services</li>
+  <li>Demo 6.2: Creating a .NET Core Build Job for PCF</li>
+  <li>Demo 6.3: Creating a .NET Classic Build Job for PCF</li>
+  <li>Demo 6.4: Creating a Deployment Definition for PCF</li>
+  <li>Demo 6.5: Creating a Blue-Green Deployment Definition for PCF</li>
+<br/><br/>
