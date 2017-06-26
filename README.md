@@ -15,31 +15,31 @@ This workshop requires participants to have Visual Studio 2017 installed.  Visua
 ##### Session 1: Cloud Native Design, Domain Driven Design, & Microservices (PowerPoint)
 
 ##### Session 2: Introduction to the CF CLI
-  <li>Lab 2.1: Introduction to Orgs, Spaces, and Roles</li>
-  <li>Lab 2.2: Pushing a .NET Core Application</li>
-  <li>Lab 2.3: Pushing a .NET Classic Application</li>
-  <li>Lab 2.4: Scaling an Application</li>
-  <li>Lab 2.5: Creating and Binding to Services</li>
-  <li>Lab 2.6: Mapping Routes</li>
+-   Lab 2.1: Introduction to Orgs, Spaces, and Roles
+-   Lab 2.2: Pushing a .NET Core Application
+-   Lab 2.3: Pushing a .NET Classic Application
+-   Lab 2.4: Scaling an Application
+-   Lab 2.5: Creating and Binding to Services
+-   Lab 2.6: Mapping Routes
   
 ##### Session 3: .NET Core and PCF (PowerPoint)
-  <li>Lab 3.1: Building and pushing .Net Core MVC Application</li>
-  <li>Lab 3.2: Integrating SQL Server using Service Tiles</li>
-  <li>Lab 3.3: Integrating Pivotal SSO</li>
+-   Lab 3.1: Building and pushing .Net Core MVC Application
+-   Lab 3.2: Integrating SQL Server using Service Tiles
+-   Lab 3.3: Integrating Pivotal SSO
   
 ##### Session 4: .NET Classic and PCF (PowerPoint)
-  <li>Lab 4.1: Building and pushing .Net 4.6 MVC Application</li>
-  <li>Lab 4.2: Integrating SQL Server using Service Tiles</li>
-  <li>Lab 4.3: Integrating Pivotal SSO</li>
+-   Lab 4.1: Building and pushing .Net 4.6 MVC Application
+-   Lab 4.2: Integrating SQL Server using Service Tiles
+-   Lab 4.3: Integrating Pivotal SSO
 
 ##### Session 5: Advancing .NET Core with Steeltoe (PowerPoint)
-  <li>Lab 5.1: Implementing Pivotal Config Server</li>
+-   Lab 5.1: Implementing Pivotal Config Server
 
 ##### Session 6: CI-CD Pipelines with Team Services (Demos)
-  <li>Demo 6.1: Setting Up Endpoints for Services</li>
-  <li>Demo 6.2: Creating a .NET Core Build Job for PCF</li>
-  <li>Demo 6.3: Creating a .NET Classic Build Job for PCF</li>
-  <li>Demo 6.4: Creating a Deployment Definition for PCF</li>
-  <li>Demo 6.5: Creating a Blue-Green Deployment Definition for PCF</li>
+-   Demo 6.1: Setting Up Endpoints for Services
+-   Demo 6.2: Creating a .NET Core Build Job for PCF
+-   Demo 6.3: Creating a .NET Classic Build Job for PCF
+-   Demo 6.4: Creating a Deployment Definition for PCF
+-   Demo 6.5: Creating a Blue-Green Deployment Definition for PCF
   
 - - -
