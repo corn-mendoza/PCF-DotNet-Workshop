@@ -28,22 +28,24 @@ This workshop requires participants to have Visual Studio 2017 installed.  Visua
 ##### Session 3: .NET Core and PCF 
 -   Lab 3.1: Building and pushing .Net Core MVC Application
 -   Lab 3.2: Integrating SQL Server using Service Tiles
--   Lab 3.3: Integrating Pivotal SSO
   
 ##### Session 4: .NET Classic and PCF 
 -   Lab 4.1: Building and pushing .Net 4.6 MVC Application
 -   Lab 4.2: Integrating SQL Server using Service Tiles
--   Lab 4.3: Integrating Pivotal SSO
 
-##### Session 5: Advancing .NET Core with Steeltoe 
+##### Session 5 (Optional): Advancing .NET Core with Steeltoe 
 -   Lab 5.1: Implementing Pivotal Config Server
 -   Lab 5.2: Implementing Service Discovery
 
-##### Session 6: CI-CD Pipelines with Team Services (Demos)
--   Demo 6.1: Setting Up Endpoints for Services
--   Demo 6.2: Creating a .NET Core Build Job for PCF
--   Demo 6.3: Creating a .NET Classic Build Job for PCF
--   Demo 6.4: Creating a Deployment Definition for PCF
--   Demo 6.5: Creating a Blue-Green Deployment Definition for PCF
+##### Session 6 (Optional - Requires SSO Tile to be installed)
+-   Lab 6.1: Integrating Pivotal SSO with .NET Core using Steeltoe
+-   Lab 6.2: Integrating Pivotal SSO with .NET 4.6x
+
+##### Session 7: CI-CD Pipelines with Team Services (Demos)
+-   Demo 7.1: Setting Up Endpoints for Services
+-   Demo 7.2: Creating a .NET Core Build Job for PCF
+-   Demo 7.3: Creating a .NET Classic Build Job for PCF
+-   Demo 7.4: Creating a Deployment Definition for PCF
+-   Demo 7.5: Creating a Blue-Green Deployment Definition for PCF
   
 - - -
