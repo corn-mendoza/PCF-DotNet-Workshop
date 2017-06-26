@@ -18,6 +18,7 @@ This lab requires that the Cloud Foundry CLI is installed and can be found in th
 1. Clone the .NET Core application [Workshop-Web-MVC-Core](https://github.com/corn-pivotal/Workshop-Web-MVC-Core)
 
  `> git.exe clone https://github.com/corn-pivotal/Workshop-Web-MVC-Core`
+ 
 2. Open a Command Window or Powershell Window in the cloned directory
 3. Run 'Dotnet Restore'
 

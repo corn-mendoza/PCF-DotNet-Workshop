@@ -9,4 +9,6 @@ This lab requires that Visual Studio 2017 and the Cloud Foundry CLI is installed
 2. Publish the source using a Folder profile
 3. Navigate to the folder where the source ocde was published
 4. Push the source code to your API Endpoint
-`> cf push {yourappname} -b hwc_buildpack -s windows2012R2` 
+
+ `> cf push {yourappname} -b hwc_buildpack -s windows2012R2`
+ 
