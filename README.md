@@ -9,13 +9,14 @@ This workshop requires participants to have Visual Studio 2017 installed.  Visua
 - [Download Visual Studio Code](https://code.visualstudio.com/?wt.mc_id=vscom_downloads)
 - [Download Windows Cloud Foundry CLI](https://cli.run.pivotal.io/stable?release=windows64&source=github)
 - - -
-
 #### Agenda
-##### Introductions, Purpose, and Objectives 
+##### Introductions, Purpose, and Objectives
 
-##### Overview: Pivotal Cloud Foundry 
+##### Overview: Pivotal Cloud Foundry
+-   [Powerpoint]()
 
-##### Session 1: Cloud Native Design, Domain Driven Design, & Microservices
+##### Session 1: Cloud Native Design and .NET
+-   [Powerpoint]()
 
 ##### Session 2: Introduction to the CF CLI
 -	Lab 2: [Instructions](./Labs/Lab2.md)
