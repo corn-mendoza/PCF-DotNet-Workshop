@@ -37,7 +37,7 @@ This workshop requires participants to have Visual Studio 2017 installed.  Visua
 -   Lab 5.1: Implementing Pivotal Config Server
 -   Lab 5.2: Implementing Service Discovery
 
-##### Session 6 (Optional - Requires SSO Tile to be installed)
+##### Session 6 (Optional - Requires SSO Tile to be installed): Single Sign-On
 -   Lab 6.1: Integrating Pivotal SSO with .NET Core using Steeltoe
 -   Lab 6.2: Integrating Pivotal SSO with .NET 4.6x
 
