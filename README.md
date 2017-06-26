@@ -2,7 +2,7 @@
 
 <h3>Pivotal Cloud Native Applications .NET Workshop</h3>
 <br/>
-This one day hands-on classroom style session will provide developers with hands on experience building cloud native applications using micro service architectures, .NET, and Steeltoe extensions. The session includes presentations, demos and hands on labs.
+This one day hands-on classroom style session will provide developers with hands on experience building .NET Core 1.1 and .NET 4.6 applications for Pivotal Cloud Foundry. The session includes presentations, demos and hands on labs.
 <br/><br/>
 Note: You may need to follow these instructions here to set your proxy settings for the CLI: https://docs.cloudfoundry.org/cf-cli/http-proxy.html<br/><br/>
 Use the Windows instructions for the CF CLI. 
@@ -10,27 +10,25 @@ Use the Windows instructions for the CF CLI.
 <em>Agenda</em><br/><br/>
 Intro: Pivotal Cloud Foundry (PowerPoint)<br/><br/>
 Session 1: Cloud Native Design, Domain Driven Design, & Microservices (PowerPoint)<br/><br/>
-Session 2: Introducing .NET Core (PowerPoint)<br/>
-<li>Lab 1: Building a .Net Core Application</li>
+Session 2: Introduction to the CF CLI
+<li>Lab 2.1: Introduction to Orgs, Spaces, and Roles</li>
+<li>Lab 2.2: Pushing a .NET Core Application</li>
+<li>Lab 2.3: Pushing a .NET Classic Application</li>
+<li>Lab 2.4: Scaling an Application</li>
+<li>Lab 2.5: Mapping Routes</li>
+<li>Lab 2.5: Mapping Routes</li><li>Lab 2.5: Creating and Binding to Services</li>
+<li>Lab 2.5: Mapping Routes</li>
 <br/><br/>
-Session 3: .NET API with REST (PowerPoint)
-<br/>
-<li>Lab 2: Build a RESTful Web Service with DotNet Web API REST</li>
+Session 3: .NET Core and PCF (PowerPoint)<br/>
+<li>Lab 3.1: Building and pushing .Net Core MVC Application</li>
+<li>Lab 3.2: Integrating SQL Server using Service Tiles</li>
+<li>Lab 3.3: Integrating Pivotal SSO</li>
 <br/><br/>
-Session 4: Advancing .NET Core with Steeltoe (PowerPoint)
-<br/>
-<li>Lab 3: Logging with the .NET Application</li>
+Session 4: .NET Classic and PCF (PowerPoint)
+<li>Lab 4.1: Building and pushing .Net 4.6 MVC Application</li>
+<li>Lab 4.2: Integrating SQL Server using Service Tiles</li>
+<li>Lab 4.3: Integrating Pivotal SSO</li>
 <br/><br/>
-Session 5: Introducing Service Discovery (PowerPoint)
+Session 5: Advancing .NET Core with Steeltoe (PowerPoint)
+<li>Lab 5.1: Implementing Pivotal Config Server</li>
 <br/><br/>
-Session 6: Configuration Services (PowerPoint)
-<br/>
-<li>Lab 4: Introducing Data Access into .NET Core Application</li>
-<br/><br/>
-Session 7: Caching and Session State (PowerPoint)
-<br/>
-<li>Lab 5: Microservice session state handling</li>
-<br/><br/>
-Session 8: Circuit Breakers (PowerPoint)
-<br/>
-Lab 6: Microservice Fault Tolerance with Circuit Breakers
