@@ -7,11 +7,10 @@ Note: You may need to follow these instructions here to set your proxy settings 
 This workshop requires participants to have Visual Studio 2017 installed.  Visual Studio Code can be used for the .NET Core portion of the workshop.  Use the Windows instructions for the CF CLI.  
 - [Download Visual Studio 2017 Community Edition](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Community&rel=15)
 - [Download Visual Studio Code](https://code.visualstudio.com/?wt.mc_id=vscom_downloads)
-- [Download Cloud Foundry Windows CLI](https://cli.run.pivotal.io/stable?release=windows64&source=github)
-
+- [Download Windows Cloud Foundry CLI](https://cli.run.pivotal.io/stable?release=windows64&source=github)
 - - -
 
-#### <em>Agenda</em>
+#### Agenda
 ##### Introductions, Purpose, and Objectives 
 
 ##### Overview: Pivotal Cloud Foundry 
