@@ -5,7 +5,7 @@
 This one day hands-on classroom style session will provide developers with hands on experience building .NET Core 1.1 and .NET 4.6 applications for Pivotal Cloud Foundry. The session includes presentations, demos and hands on labs.
 <br/><br/>
 Note: You may need to follow these instructions here to set your proxy settings for the CLI: https://docs.cloudfoundry.org/cf-cli/http-proxy.html<br/><br/>
-Use the Windows instructions for the CF CLI. 
+This workshop requires participants to have Visual Studio 2017 installed.  Visual Studio Code can be used for the .NET Core portion of the workshop.  Use the Windows instructions for the CF CLI. 
 <br/><br/>
 <em>Agenda</em><br/><br/>
 Intro: Pivotal Cloud Foundry (PowerPoint)<br/><br/>
