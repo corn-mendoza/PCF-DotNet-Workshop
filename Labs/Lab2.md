@@ -68,9 +68,11 @@ This lab requires that the Cloud Foundry CLI is installed and can be found in th
 
 3. Create a User Provided Service 
 
-	`> cf create-user-provided-service myups-{yourappname}`
+	`> cf create-user-provided-service myups-{yourappname} -p "{\"hostname\":\"hostname\",\"port\":\"1433\",\"name\":\"myappname\",\"username\":\"user\",\"password\":\"password\"}"`
 
 4. Bind a Service to an Application
+
+	`> cf bind-service {yourappname} mysqldb-{yourappname}`
 
 #### Lab 2.6: Mapping and Unmapping Routes
 1. Map a second route to your application
