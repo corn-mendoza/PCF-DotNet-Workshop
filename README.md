@@ -25,7 +25,7 @@ This workshop requires participants to have Visual Studio 2017 installed.  Visua
 -   Lab 2.3: Pushing a .NET Classic Application
 -   Lab 2.4: Scaling an Application
 -   Lab 2.5: Creating and Binding to Services
--   Lab 2.6: Mapping Routes
+-   Lab 2.6: Mapping and Unmapping Routes
   
 ##### Session 3: .NET Core and PCF 
 -	Lab 3: [Instructions](./Labs/Lab3.md)

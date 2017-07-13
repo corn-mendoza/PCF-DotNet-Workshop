@@ -72,3 +72,10 @@ This lab requires that the Cloud Foundry CLI is installed and can be found in th
 
 4. Bind a Service to an Application
 
+#### Lab 2.6: Mapping and Unmapping Routes
+1. Map a second route to your application
+
+2. Unmap the route from your application
+
+3. Delete orphaned routes
+
