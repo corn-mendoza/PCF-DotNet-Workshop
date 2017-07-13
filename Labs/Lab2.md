@@ -47,3 +47,28 @@ This lab requires that the Cloud Foundry CLI is installed and can be found in th
 5. Push the source code to your API Endpoint
 
  `> cf push {yourappname} -b hwc_buildpack -s windows2012R2` 
+ 
+#### Lab 2.4: Scaling an Application
+1. Scale the number of instances of an application
+
+	`> cf scale {yourappname} -i 2`
+
+2. Scale the memory and disk space of an application
+
+	`> cf scale {yourappname} -m 1G -k 1G`
+
+#### Lab 2.5: Creating and Binding Services
+1. List the available services in the marketplace
+
+	`> cf m`
+
+2. Create a MySQL Service 
+
+	`> cf create-service p-mysql 100mb mysqldb-{yourappname}`
+
+3. Create a User Provided Service 
+
+	`> cf create-user-provided-service myups-{yourappname}`
+
+4. Bind a Service to an Application
+
