@@ -20,6 +20,7 @@ This lab requires that the Cloud Foundry CLI is installed and can be found in th
  `> git.exe clone https://github.com/corn-pivotal/Workshop-Web-MVC-Core`
  
 2. Open a Command Window or Powershell Window in the cloned directory
+
 3. Run 'Dotnet Restore'
 
  `> dotnet restore`
@@ -42,8 +43,11 @@ This lab requires that the Cloud Foundry CLI is installed and can be found in th
  `> git.exe clone https://github.com/corn-pivotal/Workshop-Web-MVC-452`
  
 2. Open the solution in Visual Studio
+
 3. Publish the source using a Folder profile
-4. Navigate to the folder where the source ocde was published
+
+4. Navigate to the folder where the source code was published
+
 5. Push the source code to your API Endpoint
 
  `> cf push {yourappname} -b hwc_buildpack -s windows2012R2` 
