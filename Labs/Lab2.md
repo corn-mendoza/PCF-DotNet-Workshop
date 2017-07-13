@@ -75,9 +75,16 @@ This lab requires that the Cloud Foundry CLI is installed and can be found in th
 	`> cf bind-service {yourappname} mysqldb-{yourappname}`
 
 #### Lab 2.6: Mapping and Unmapping Routes
-1. Map a second route to your application
+1. Map a second route to your application - use the domain name used for the workshop 
+
+	`> cf map-route {yourappname} {domainname} --hostname {yourappname}-dev` 
 
 2. Unmap the route from your application
 
-3. Delete orphaned routes
+	`> cf unmap-route {yourappname} {domainname} --hostname {yourappname}-dev`
 
+3. Delete orphaned routes 
+
+	`> cf delete-orphaned-routes`
+
+    
