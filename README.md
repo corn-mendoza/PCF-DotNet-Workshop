@@ -18,40 +18,49 @@ This workshop requires participants to have Visual Studio 2017 installed.  Visua
 ##### Session 1: Cloud Native Design and .NET
 -   [Powerpoint]()
 
-##### Session 2: Introduction to the CF CLI
--	Lab 2: [Instructions](./Labs/Lab2.md)
+##### Session 2: Introduction to the Cloud Foundry and the CLI 
+
+A half-day workshop designed to give developers an hands-on introduction to the power of Pivotal Cloud Foundry for .NET. 
+
+-	Lab 2: [Overview]()
+-	Lab 2.0: [Instructions](./Labs/Lab2.md)
 -   Lab 2.1: Introduction to Orgs, Spaces, and Roles
 -   Lab 2.2: Pushing a .NET Core Application
 -   Lab 2.3: Pushing a .NET Classic Application
 -   Lab 2.4: Scaling an Application
 -   Lab 2.5: Creating and Binding to Services
 -   Lab 2.6: Mapping and Unmapping Routes
+-   Lab 2.7: Mapping and Unmapping Routes
+-	Lab 2.8: Application Logging
+-   Lab 2.9: Application Metrics
   
-##### Session 3: .NET Core and PCF 
--	Lab 3: [Instructions](./Labs/Lab3.md)
--   Lab 3.1: Building and pushing .Net Core MVC Application
--   Lab 3.2: Integrating SQL Server using Service Tiles
+##### Session 3 (Advanced/Optional): PCF and SQL Server Integration
+-	Lab 3: [Overview]()
+-	Lab 3.0: [Instructions](./Labs/Lab3.md)
+-   Lab 3.1: Simple integration with .NET Core using a User Provided Service
+-   Lab 3.2: Simple integration with .NET Framework using a User Provided Service
+-   Lab 3.3: Simple integration for Azure SQL using the Azure Broker Service
   
-##### Session 4: .NET Classic and PCF 
--	Lab 4: [Instructions](./Labs/Lab4.md)
--   Lab 4.1: Building and pushing .Net 4.6 MVC Application
--   Lab 4.2: Integrating SQL Server using Service Tiles
+##### Session 4 (Advanced/Optional): Using .NET Framework with Pivotal Service Discovery
+-	Lab 4: [Instructions](./Labs/Lab5.md)
+-   Lab 4.1: Implementing Pivotal Config Server
+-   Lab 4.2: Implementing Service Discovery
 
-##### Session 5 (Optional): Advancing .NET Core with Steeltoe 
--	Lab 5: [Instructions](./Labs/Lab5.md)
--   Lab 5.1: Implementing Pivotal Config Server
--   Lab 5.2: Implementing Service Discovery
+##### Session 5 (Advanced/Optional): Using Pivotal Single Sign-On
 
-##### Session 6 (Optional - Requires SSO Tile to be installed): Single Sign-On
--	Lab 6: [Instructions](./Labs/Lab6.md)
--   Lab 6.1: Integrating Pivotal SSO with .NET Core using Steeltoe
--   Lab 6.2: Integrating Pivotal SSO with .NET 4.6x
+>***Requires installation of the SSO Tile*
 
-##### Session 7: CI-CD Pipelines with Team Services (Demos)
--   Demo 7.1: Setting Up Endpoints for Services
--   Demo 7.2: Creating a .NET Core Build Job for PCF
--   Demo 7.3: Creating a .NET Classic Build Job for PCF
--   Demo 7.4: Creating a Deployment Definition for PCF
--   Demo 7.5: Creating a Blue-Green Deployment Definition for PCF
+-	Lab 5: [Overview]()
+-	Lab 5.0: [Instructions](./Labs/Lab6.md)
+-   Lab 5.1: Integrating Pivotal SSO with .NET Core using Steeltoe
+-   Lab 5.2: Integrating Pivotal SSO with .NET 4.6x
+
+##### Session 6: CI-CD Pipelines with Team Services (Demos)
+-	Demo 6: [Overview]()
+-   Demo 6.1: Setting Up Endpoints for Services
+-   Demo 6.2: Creating a .NET Core Build Job for PCF
+-   Demo 6.3: Creating a .NET Classic Build Job for PCF
+-   Demo 6.4: Creating a Deployment Definition for PCF
+-   Demo 6.5: Creating a Blue-Green Deployment Definition for PCF
 -	Implementation Guide: [CI/CD Pipelines for VSTS/TFS](./documents/PivotalTeamFoundationServicesCICD.docx.pdf)  
 
