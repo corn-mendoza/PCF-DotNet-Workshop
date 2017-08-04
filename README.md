@@ -58,7 +58,7 @@ A half-day workshop focused on the basics of integrating Pivotal's Configuration
 
 -	Lab 4: [Introduction - Powerpoint]()
 
-*Advanced workshop focused on the integration of Service Discovery functionality in .NET client and server applications. Presentation topics include service discovery principles, configuration services, and security considerations. This is a hands-on workshop is designed to help developers create .NET Framework applications from scratch and make changes to quickly enable service discovery.*
+	*Advanced workshop focused on the integration of Service Discovery functionality in .NET client and server applications. Presentation topics include service discovery principles, configuration services, and security considerations. This is a hands-on workshop is designed to help developers create .NET Framework applications from scratch and make changes to quickly enable service discovery.*
 
 -	Lab 4.0: [Instructions](./Labs/Lab5.md)
 	-   Lab 4.1: Implementing Pivotal Config Server
