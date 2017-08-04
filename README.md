@@ -23,6 +23,7 @@ This workshop requires participants to have Visual Studio 2017 installed.  Visua
 A half-day workshop designed to give developers an hands-on introduction to the power of Pivotal Cloud Foundry for .NET. 
 
 -	Lab 2: [Introduction - Powerpoint]()
+
 	*Provides an overview of the capabilities of Pivotal Cloud Foundry and .NET. Covers the common developer topics and questions around .NET and cloud native application development.*
     
 -	Lab 2.0: [Instructions](./Labs/Lab2.md)
@@ -35,27 +36,35 @@ A half-day workshop designed to give developers an hands-on introduction to the 
 	-   Lab 2.7: Mapping and Unmapping Routes
 	-   Lab 2.8: Application Logging
 	-   Lab 2.9: Application Metrics
-  
+
+
 ##### Session 3 (Advanced/Optional): PCF and SQL Server Integration
 -	Lab 3: [Introduction - Powerpoint]()
+
 	*Advanced workshop focused on the integration of Microsoft SQL Server with Pivotal Cloud Foundry. Presentation topics include cloud native design, data migration, and security requirements. This is a hands-on workshop is designed to help developers create .NET applications from scratch and make changes to quickly enable SQL Server scaffolding and then update the application to take advantage of PCF.*
     
 -	Lab 3.0: [Instructions](./Labs/Lab3.md)
 	-   Lab 3.1: Simple integration with .NET Core using a User Provided Service
 	-   Lab 3.2: Simple integration with .NET Framework using a User Provided Service
 	-   Lab 3.3: Simple integration for Azure SQL using the Azure Broker Service
-  
+
+
 ##### Session 4 (Advanced/Optional): Using .NET Framework with Pivotal Service Discovery
 -	Lab 4: [Introduction - Powerpoint]()
+
+
 -	Lab 4.0: [Instructions](./Labs/Lab5.md)
 	-   Lab 4.1: Implementing Pivotal Config Server
 	-   Lab 4.2: Implementing Service Discovery
+
 
 ##### Session 5 (Advanced/Optional): Using Pivotal Single Sign-On
 
 >***Requires installation of the SSO Tile*
 
 -	Lab 5: [Introduction - Powerpoint]()
+
+
 -	Lab 5.0: [Instructions](./Labs/Lab6.md)
 	-   Lab 5.1: Integrating Pivotal SSO with .NET Core using Steeltoe
 	-   Lab 5.2: Integrating Pivotal SSO with .NET 4.6x
