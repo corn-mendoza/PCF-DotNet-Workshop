@@ -39,6 +39,9 @@ A half-day workshop designed to give developers an hands-on introduction to the 
 
 
 ##### Session 3 (Advanced/Optional): PCF and SQL Server Integration
+
+A half-day workshop focused on the basics of using Microsoft SQL Server with Pivotal Cloud Foundry.
+
 -	Lab 3: [Introduction - Powerpoint]()
 
 	*Advanced workshop focused on the integration of Microsoft SQL Server with Pivotal Cloud Foundry. Presentation topics include cloud native design, data migration, and security requirements. This is a hands-on workshop is designed to help developers create .NET applications from scratch and make changes to quickly enable SQL Server scaffolding and then update the application to take advantage of PCF.*
@@ -49,14 +52,18 @@ A half-day workshop designed to give developers an hands-on introduction to the 
 	-   Lab 3.3: Simple integration for Azure SQL using the Azure Broker Service
 
 
-##### Session 4 (Advanced/Optional): Using .NET Framework with Pivotal Service Discovery
+##### Session 4 (Advanced/Optional): Using .NET Framework with Pivotal Service Discovery and Configuration Server
+
+A half-day workshop focused on the basics of integrating Pivotal's Configuration Services and Service Discovery capabilities with .NET Framework Applications.
+
 -	Lab 4: [Introduction - Powerpoint]()
 
+*Advanced workshop focused on the integration of Service Discovery functionality in .NET client and server applications. Presentation topics include service discovery principles, configuration services, and security considerations. This is a hands-on workshop is designed to help developers create .NET Framework applications from scratch and make changes to quickly enable service discovery.*
 
 -	Lab 4.0: [Instructions](./Labs/Lab5.md)
 	-   Lab 4.1: Implementing Pivotal Config Server
-	-   Lab 4.2: Implementing Service Discovery
-
+	-   Lab 4.2: Implementing Service Discovery on the Web Services
+	-   Lab 4.2: Implementing Service Discovery on the Web Clients
 
 ##### Session 5 (Advanced/Optional): Using Pivotal Single Sign-On
 
