@@ -33,8 +33,27 @@ To sign in, use a web browser to open the page https://aka.ms/devicelogin and en
 
 ***The id is the SUBSCRIPTION_ID and the tenantId is the TENANT_ID for the tile configuration.***
 
+### Simple Service Principal Creation
+The following command will create the Service Principal Application and Account.
 
-### Application and Account Configuration
+`	PS C:\scripts> az ad sp create-for-rbac`
+
+**Output:**
+> Retrying role assignment creation: 1/36
+> Retrying role assignment creation: 2/36
+> Retrying role assignment creation: 3/36
+> {
+>   "appId": "9ce54c04-1111-0000-9394-203751bd775c",
+>   "displayName": "azure-cli-2017-09-05-19-53-24",
+>   "name": "http://azure-cli-2017-09-05-19-53-24",
+>   "password": "a4eec0af-1111-4bfb-8f23-397ee7869c1e",
+>   "tenant": "29248f74-1111-4db2-9a50-c62a6877a0c1"
+> }
+> 
+
+***The appId is your CLIENT_ID and the password is your CLIENT_SECRET for the tile configuration***
+
+### Manual Application and Account Configuration for Service Principal (Optional)
 The following commands will create the Service Principal Application and Account.
 #### Create the Application in AzureAD
 The following command will create the Azure AD application instance for the Azure Service Broker.  The identifier URIs need to be unique for the subscription but fake URIs can be used.
@@ -76,6 +95,7 @@ The following command will create the Service Principal.  User the appId created
 >     "http://MendozaBOSHAzureCPI"
 >   ]
 > }
+
 
 ### Setting Up Broker Priviledges
 Service Principals can have limited or full access to Azure resources. You must assign a set of priviledges to the Service Broker in order to successfully complete the configuration.  
