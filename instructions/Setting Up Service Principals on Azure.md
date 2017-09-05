@@ -39,9 +39,6 @@ The following command will create the Service Principal Application and Account.
 `	PS C:\scripts> az ad sp create-for-rbac`
 
 **Output:**
-> Retrying role assignment creation: 1/36
-> Retrying role assignment creation: 2/36
-> Retrying role assignment creation: 3/36
 > {
 >   "appId": "9ce54c04-1111-0000-9394-203751bd775c",
 >   "displayName": "azure-cli-2017-09-05-19-53-24",
