@@ -1,5 +1,7 @@
 # Setting up Azure Broker Tile - Service Principals
 
+This quick guide is designed to assist operators setup Azure Service Principals for configuring the Azure Service Broker tile in Pivotal Cloud Foundry.  This version of the document utilizes the latest Azure CLI 2.0 commands.
+
 ## Creating a Service Principal
 
 Powershell, Azure CLI 2.0, and a Microsoft Azure Subscription is required to complete these configuration steps.
@@ -28,11 +30,11 @@ To sign in, use a web browser to open the page https://aka.ms/devicelogin and en
   }
 
 
-The SUBSCRIPTION_ID is the id and the TENANT_ID is the tenantId.
-The following commands will create the Service Principal Application and Account.
+***The id is the SUBSCRIPTION_ID and the tenantId is the TENANT_ID for the tile configuration.***
 
 
 ### Application and Account Configuration
+The following commands will create the Service Principal Application and Account.
 #### Create the Application in AzureAD
 The following command will create the Azure AD application instance for the Azure Service Broker.  The identifier URIs need to be unique for the subscription but fake URIs can be used.
 
@@ -54,7 +56,7 @@ The following command will create the Azure AD application instance for the Azur
   "replyUrls": []
 }
 
-The appId is your CLIENT_ID and the password is your CLIENT_SECRET
+***The appId is your CLIENT_ID and the password is your CLIENT_SECRET for the tile configuration***
 
 #### Create the Service Principal
 The following command will create the Service Principal.  User the appId created in the previous step to execute.  Make note of the Service Principal Name as this will be used to configure permissions.
