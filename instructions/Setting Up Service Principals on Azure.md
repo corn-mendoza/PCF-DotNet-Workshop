@@ -4,7 +4,7 @@ This quick guide is designed to assist operators setup Azure Service Principals 
 
 ## Creating a Service Principal
 
-Powershell, Azure CLI 2.0, and a Microsoft Azure Subscription is required to complete these configuration steps.
+Powershell or Windows Console, Azure CLI 2.0, and a Microsoft Azure Subscription are required to complete these configuration steps.
 
 ### Login to Azure
 	PS C:\scripts> az login
