@@ -123,7 +123,7 @@ This lab requires that the Cloud Foundry CLI is installed and can be found in th
 
 2. View the application log using the command line
 
-	`> cf logs {yourappname} --recent
+	`> cf logs {yourappname} --recent`
 
 #### Lab 2.9: View the Application Metrics
 1. View the application metrics in the app manager UI if it is available
