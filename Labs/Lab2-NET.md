@@ -114,3 +114,13 @@ This lab requires that the Cloud Foundry CLI is installed and can be found in th
 	`> cf unmap-route {appname} {domainname} --hostname {appname}-prod`
 
 8. View application in browser and verify the production url points to the GREEN instance of the application
+
+#### Lab 2.8: View the Application Log
+1. View the application log in the app manager UI
+
+2. View the application log using the command line
+
+	`> cf logs {yourappname} --recent
+
+#### Lab 2.9: View the Application Metrics
+1. View the application metrics in the app manager UI if it is available
