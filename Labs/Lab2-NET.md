@@ -23,7 +23,7 @@ This lab requires that the Cloud Foundry CLI is installed and can be found in th
 #### Lab 2.2: Pushing a .NET Classic Application
 1. Clone the .NET application [DotNetWorkshop-MVC](https://github.com/corn-pivotal/DotNetWorkshop-MVC)
 
-	`> git.exe clone https://github.com/corn-pivotal/Workshop-Web-MVC-452`
+	`> git.exe clone https://github.com/corn-pivotal/DotNetWorkshop-MVC`
  
 2. Open the solution in Visual Studio
 
