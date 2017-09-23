@@ -37,7 +37,7 @@ A half-day workshop designed to give developers an hands-on introduction to the 
 	-   Lab 2.8: Application Logging
 	-   Lab 2.9: Application Metrics
 
-##### Session 2 - .NET Framework Focus: Introduction to the Cloud Foundry and the CLI focused on .NET Framework 
+##### Session 2-NET: Introduction to the Cloud Foundry and the CLI focused on .NET Framework 
 
 A half-day workshop designed to give developers an hands-on introduction to the power of Pivotal Cloud Foundry for .NET. 
 
