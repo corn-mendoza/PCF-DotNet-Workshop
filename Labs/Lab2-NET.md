@@ -74,6 +74,7 @@ This lab requires that the Cloud Foundry CLI is installed and can be found in th
 4. Bind to the user provided services
 
 	`> cf bind-service {yourappname} AttendeeContext`
+    
     `> cf bind-service {yourappname} DefaultConntection`
 
 5. Restart the application
@@ -94,11 +95,13 @@ This lab requires that the Cloud Foundry CLI is installed and can be found in th
 3. Set environment variables
 
 	`> cf se {appname2} PROD_MODE GREEN`
+    
     `> cf se {appname2} WORKSHOP_URL {workshop-apps-url}`
 
 4. Bind services to the 2nd application
 
 	`> cf bind-service {appname2} DefaultConnection`
+    
     `> cf bind-service {appname2} AttendeeContext`
 
 5. Restart the 2nd application
