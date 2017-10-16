@@ -1,10 +1,10 @@
-# Lab 2 : .NET Framework Application
+# Lab 2 : .NET Core Application
 
 ## Preparations
 This lab demonstrates the capabilities of Pivotal Cloud Foundry using the Command Line Interface. The source code allows the application to run using SQL Server Express LocalDB. 
 
 ### Details
-The application is a default .NET 4.61 MVC application with SQL Server targeted for the user security database and the attendee sampple database.  The web.config will be transformed during publishing to replace the LocalDB connection support with the standard SQL Sever connection support.  The published connection strings in the web.config are designed to be used with token replacement in a CI/CD pipeline.  These connection strings can be manually updated prior to pushing to PCF with the workshop database connection strings.  The database code has been updated to use the user provided service if it is found that has a corresponding name in the web.config (AttendeeContext, DefaultConnection).
+The application is a .NET 2.0 MVC application with SQL Server targeted for the user security database and the attendee sampple database.  The web.config will be transformed during publishing to replace the LocalDB connection support with the standard SQL Sever connection support.  The published connection strings in the web.config are designed to be used with token replacement in a CI/CD pipeline.  These connection strings can be manually updated prior to pushing to PCF with the workshop database connection strings.  The database code has been updated to use the user provided service if it is found that has a corresponding name in the web.config (AttendeeContext, DefaultConnection).
 
 ### Requirements
 This lab requires that the Cloud Foundry CLI is installed and can be found in the path, Visual Studio 2017 with SQL Server Express LocalDB option to run locally.
@@ -21,9 +21,9 @@ This lab requires that the Cloud Foundry CLI is installed and can be found in th
  
 
 #### Lab 2.2: Pushing a .NET Classic Application
-1. Clone the .NET application [DotNetWorkshop-MVC](https://github.com/corn-pivotal/DotNetWorkshop-MVC)
+1. Clone the .NET application [DotNetCoreWorkshop-MVC](https://github.com/corn-pivotal/DotNetCoreWorkshop-MVC)
 
-	`> git.exe clone https://github.com/corn-pivotal/DotNetWorkshop-MVC`
+	`> git.exe clone https://github.com/corn-pivotal/DotNetCoreWorkshop-MVC`
  
 2. Open the solution in Visual Studio
 
