@@ -37,6 +37,24 @@ A half-day workshop designed to give developers an hands-on introduction to the 
 	-   Lab 2.8: Application Logging
 	-   Lab 2.9: Application Metrics
 
+##### Session 2-NET: Introduction to the Cloud Foundry and the CLI focused on .NET Framework 
+
+A half-day workshop designed to give developers an hands-on introduction to the power of Pivotal Cloud Foundry for .NET. 
+
+-	Lab 2-NET: [Introduction - Powerpoint]()
+
+	*Provides an overview of the capabilities of Pivotal Cloud Foundry and .NET. Covers the common developer topics and questions around .NET and cloud native application development.*
+    
+-	Lab 2.0-NET: [Instructions](./Labs/Lab2-NET.md)
+	-   Lab 2.1: Introduction to Orgs, Spaces, and Roles
+	-   Lab 2.2: Pushing a .NET Classic Application
+	-   Lab 2.3: Scaling an Application
+	-   Lab 2.4: Mapping Routes
+	-   Lab 2.5: Set Environment Variables
+	-   Lab 2.6: Creating and Binding to Services
+	-   Lab 2.7: Setting up for Blue/Green Deployment
+	-   Lab 2.8: Application Logging
+	-   Lab 2.9: Application Metrics
 
 ##### Session 3 (Advanced/Optional): PCF and SQL Server Integration
 
