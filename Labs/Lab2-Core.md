@@ -89,7 +89,7 @@ This lab requires that the Cloud Foundry CLI and .NET Core is installed and can 
 
 	`> cf restart {yourappname}`
 
-6. View the application manager to verify that the Attendees service is bound to your application
+6. View your app in the Application Manager and, under Services, verify that the Attendees User Provided Service is correctly configured and bound to your application
 
 #### Lab 2.7: Setting up for Blue/Green Deployment
 1. Push this .NET application to a second application
