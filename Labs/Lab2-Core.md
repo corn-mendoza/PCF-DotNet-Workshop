@@ -1,41 +1,51 @@
 # Lab 2 : .NET Core Application
 
 ## Preparations
-This lab demonstrates the capabilities of Pivotal Cloud Foundry using the Command Line Interface. The source code allows the application to run using SQL Server Express LocalDB. 
-
-### Details
-The application is a .NET 2.0 MVC application with SQL Server targeted for the user security database and the attendee sampple database.  The web.config will be transformed during publishing to replace the LocalDB connection support with the standard SQL Sever connection support.  The published connection strings in the web.config are designed to be used with token replacement in a CI/CD pipeline.  These connection strings can be manually updated prior to pushing to PCF with the workshop database connection strings.  The database code has been updated to use the user provided service if it is found that has a corresponding name in the web.config (AttendeeContext, DefaultConnection).
+This lab demonstrates the capabilities of Pivotal Cloud Foundry using the Command Line Interface. 
 
 ### Requirements
-This lab requires that the Cloud Foundry CLI is installed and can be found in the path, Visual Studio 2017 with SQL Server Express LocalDB option to run locally.
+This lab requires that the Cloud Foundry CLI and .NET Core is installed and can be found in the path.
+
+### Workshop Details
+
+#### Demo App Repo: https://github.com/corn-pivotal/DotNetCoreWorkshop-MVC
+#### API URL: https://api.run.haas-101.pez.pivotal.io
+#### Apps Manager UI: https://apps.run.haas-101.pez.pivotal.io
+
+#### Org: student-{#}
+#### Space: student-{#}
 
 ## Instructions
 #### Cloud Foundry CLI Basics
 1. Login to Cloud Foundry API Endpoint
 
-	`> cf login -a https://{yourapiendpoint}`
+	`> cf login -a https://{yourapiendpoint} --skip-ssl-validation`
  
 2. Set org and space target using CLI
 
 	`> cf target -o {yourorg} -s {yourspace}`
  
 
-#### Lab 2.2: Pushing a .NET Classic Application
-1. Clone the .NET application [DotNetCoreWorkshop-MVC](https://github.com/corn-pivotal/DotNetCoreWorkshop-MVC)
+#### Lab 2.2: Pushing a .NET Core Application
+1. Create a new directory and create a new .NET Core MVC Application
 
-	`> git.exe clone https://github.com/corn-pivotal/DotNetCoreWorkshop-MVC`
+	`> dotnet new mvc`
  
-2. Open the solution in Visual Studio
+2. Build the application
+
+	`> dotnet build`
 
 3. Run the application locally to validate the application will run correctly
 
-3. Publish the source using a Folder profile
+	`> dotnet run`
 
-4. Navigate to the folder where the source code was published
+4. Publish the source using the Release configuration
+
+	`> dotnet publish -c Release`
 
 5. Push the source code to your API Endpoint
 
-	`> cf push {yourappname} -b hwc_buildpack -s windows2012R2`
+	`> cf push {yourappname} -b https://github.com/cloudfoundry/dotnet-core-buildpack.git`
  
 #### Lab 2.3: Scaling an Application
 1. Scale the number of instances of an application
@@ -52,11 +62,9 @@ This lab requires that the Cloud Foundry CLI is installed and can be found in th
 	`> cf map-route {yourappname} {domainname} --hostname {yourappname}-prod`
 
 #### Lab 2.5: Set Environment Variables
-1. Set environment variable to display on Home Page
-	`> cf se {yourappname} PROD_MODE BLUE`
+1. Set environment variable for PROD_MODE to BLUE 
 
-2. Set environment variable to set Apps Manager URL on Home Page
-	`> cf se {yourappname} WORKSHOP_URL {workshop-apps-url}`
+	`> cf se {yourappname} PROD_MODE BLUE`
 
 #### Lab 2.6: Creating and Binding Services
 1. List the available services in the marketplace
@@ -74,19 +82,17 @@ This lab requires that the Cloud Foundry CLI is installed and can be found in th
 4. Bind to the user provided services
 
 	`> cf bind-service {yourappname} AttendeeContext`
-    
-    `> cf bind-service {yourappname} DefaultConntection`
 
 5. Restart the application
 
 	`> cf restart {yourappname}`
 
-6. View the application to verify that the Attendees page loads using the user provided service
+6. View the application manager to verify that the Attendees service is bound to your application
 
 #### Lab 2.7: Setting up for Blue/Green Deployment
-1. Push this .NET Framework application to a second application
+1. Push this .NET application to a second application
 
-	`> cf push {appname2} -b hwc_buildpack -s windows2012R2`
+	`> cf push {appname2} -b https://github.com/cloudfoundry/dotnet-core-buildpack.git`
 
 2. Scale the application to 2 instances
 
@@ -95,13 +101,9 @@ This lab requires that the Cloud Foundry CLI is installed and can be found in th
 3. Set environment variables
 
 	`> cf se {appname2} PROD_MODE GREEN`
-    
-    `> cf se {appname2} WORKSHOP_URL {workshop-apps-url}`
 
 4. Bind services to the 2nd application
 
-	`> cf bind-service {appname2} DefaultConnection`
-    
     `> cf bind-service {appname2} AttendeeContext`
 
 5. Restart the 2nd application
