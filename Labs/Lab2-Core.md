@@ -11,7 +11,9 @@ This lab requires that the Cloud Foundry CLI and .NET Core is installed and can 
 #### Demo App Repo: https://github.com/corn-pivotal/DotNetCoreWorkshop-MVC
 #### API URL: https://api.run.haas-101.pez.pivotal.io
 #### Apps Manager UI: https://apps.run.haas-101.pez.pivotal.io
-
+#### Workshop SQL Connection String: 
+	Server=tcp:pa-workshop.database.windows.net,1433;Initial Catalog=AttendeeDB-S1;Persist Security Info=False;User ID=dbadmin;Password=PCF!Password;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;
+    
 #### Org: student-{#}
 #### Space: student-{#}
 
@@ -45,7 +47,7 @@ This lab requires that the Cloud Foundry CLI and .NET Core is installed and can 
 
 5. Push the source code to your API Endpoint
 
-	`> cf push {yourappname} -b https://github.com/cloudfoundry/dotnet-core-buildpack.git`
+	`> cf push {yourappname} -b https://github.com/cloudfoundry/dotnet-core-buildpack.git -p bin\Release\netcoreapp2.0\publish\`
  
 #### Lab 2.3: Scaling an Application
 1. Scale the number of instances of an application
@@ -92,7 +94,7 @@ This lab requires that the Cloud Foundry CLI and .NET Core is installed and can 
 #### Lab 2.7: Setting up for Blue/Green Deployment
 1. Push this .NET application to a second application
 
-	`> cf push {appname2} -b https://github.com/cloudfoundry/dotnet-core-buildpack.git`
+	`> cf push {appname2} -b https://github.com/cloudfoundry/dotnet-core-buildpack.git -p bin\Release\netcoreapp2.0\publish\`
 
 2. Scale the application to 2 instances
 
