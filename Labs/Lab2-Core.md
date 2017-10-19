@@ -27,6 +27,7 @@ This lab requires that the Cloud Foundry CLI and .NET Core is installed and can 
 
 	`> cf target -o {yourorg} -s {yourspace}`
  
+3. Login to the apps manager web UI using the Apps Manager URL in the details above
 
 #### Lab 2.2: Pushing a .NET Core Application
 1. Create a new directory and create a new .NET Core MVC Application
@@ -129,5 +130,5 @@ This lab requires that the Cloud Foundry CLI and .NET Core is installed and can 
 
 	`> cf logs {yourappname} --recent`
 
-#### Lab 2.9: View the Application Metrics
+#### Lab 2.9: View the Application Metrics (if available)
 1. View the application metrics in the app manager UI if it is available
