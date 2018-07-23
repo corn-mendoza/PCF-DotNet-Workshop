@@ -20,6 +20,14 @@ This lab requires that the Cloud Foundry CLI is installed and can be found in th
 	`> cf target -o {yourorg} -s {yourspace}`
  
 #### Lab Step 1: Create a new Web application using Visual Studio and push into your space
+1. Create a new project in Visual Studio for a new .NET Framework Web Application
+2. Run the application locally to ensure the application does run
+3. Publish the application using the Folder Profile
+4. Open a command window at the publish location and push the application
+
+	`> cf push {yourappname} -b hwc_buildpack -s windows2016`
+5. Verify the application was pushed correctly by navigating to the application URL
+6. Log into the Apps Manager portal and view the application details and settings
 
 #### Lab Step 2: Scaling an Application
 1. Scale the number of instances of an application
@@ -29,6 +37,9 @@ This lab requires that the Cloud Foundry CLI is installed and can be found in th
 2. Scale the memory and disk space of an application
 
 	`> cf scale {yourappname} -m 1G -k 1G`
+
+3. Scale the application in the Apps Manager portal
+4. Turn on auto-scaling for the application in the Apps Manager portal
 
 #### Lab Step 3: Mapping Routes
 1. Map a simulated production route to the application
@@ -49,35 +60,10 @@ This lab requires that the Cloud Foundry CLI is installed and can be found in th
 2. Set environment variable to set Apps Manager URL on Home Page
 	`> cf se {yourappname} ASPNETCORE_ENVIRONMENT "development"`
 
-#### Lab Step 6: Creating and Binding Services
-1. List the available services in the marketplace
-
-	`> cf m`
-
-2. Create a User Provided Service for AttendeeContext - use connection string provided in workshop instructions for {workshop-connectionstring}
-
-	`> cf create-user-provided-service AttendeeContext -p "{\"connectionstring\":\"{workshop-connectionstring}\"}"`
-
-3. Create a User Provided Service for the DefaultConnection - use connection string provided in workshop instructions for {workshop-connectionstring}
-
-	`> cf create-user-provided-service DefaultConnection -p "{\"connectionstring\":\"{workshop-connectionstring}\"}"`
-
-4. Bind to the user provided services
-
-	`> cf bind-service {yourappname} AttendeeContext`
-    
-    `> cf bind-service {yourappname} DefaultConntection`
-
-5. Restart the application
-
-	`> cf restart {yourappname}`
-
-6. View the application to verify that the Attendees page loads using the user provided service
-
-#### Lab Step 7: Setting up for Blue/Green Deployment
+#### Lab Step 6: Setting up for Blue/Green Deployment
 1. Push this .NET Framework application to a second application
 
-	`> cf push {appname2} -b hwc_buildpack -s windows2012R2`
+	`> cf push {appname2} -b hwc_buildpack -s windows2016`
 
 2. Scale the application to 2 instances
 
@@ -93,7 +79,7 @@ This lab requires that the Cloud Foundry CLI is installed and can be found in th
 
 8. View application in browser and verify the production url points to the GREEN instance of the application
 
-#### Lab Step 8: Steeltoe Management Enhancements
+#### Lab Step 7: Steeltoe Management Enhancements
 1. Locate the .NET solution in the sources folder 
 
 2. Open the solution in Visual Studio
@@ -115,6 +101,25 @@ This lab requires that the Cloud Foundry CLI is installed and can be found in th
 8. Review the Steeltoe enhancements to the application portal
 
 9. In the apps manager portal click on Trace to view the trace information related to your application
+
+#### Lab Step 8: Creating and Binding Services
+1. List the available services in the marketplace
+
+	`> cf m`
+
+2. Create a User Provided Service for AttendeeContext - use connection string provided in workshop instructions for {workshop-connectionstring}
+
+	`> cf create-user-provided-service AttendeeContext -p "{\"connectionstring\":\"{workshop-connectionstring}\"}"`
+
+3. Bind to the user provided services
+
+	`> cf bind-service {yourappname} AttendeeContext`
+    
+4. Restart the application
+
+	`> cf restart {yourappname}`
+
+5. View the application to verify that the Attendees page loads using the user provided service
 
 #### Lab Step 9: Creating a Console Application
 1. Create a new console application with the following in the main loop:
