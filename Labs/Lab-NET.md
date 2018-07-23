@@ -121,6 +121,8 @@ This lab requires that the Cloud Foundry CLI is installed and can be found in th
 
 5. View the application to verify that the Attendees page loads using the user provided service
 
+	`http://{yourappname}.domain.com/api/Attendees`
+
 #### Lab Step 9: Creating a Console Application
 1. Create a new console application with the following in the main loop:
 
@@ -135,4 +137,11 @@ This lab requires that the Cloud Foundry CLI is installed and can be found in th
 	
 4. SSH into the new application and look around
 
-	`> cf ssh push {yourappname}`
+	`> cf ssh {yourappname}`
+
+#### Lab Step 10: Create an Application Manifest
+1. Select an application that you have pushed for the manifest creation
+
+	`> cf create-app-manifest {yourappname}`
+	
+2. Review generated manifest file created {yourappname}_manifest.yml
