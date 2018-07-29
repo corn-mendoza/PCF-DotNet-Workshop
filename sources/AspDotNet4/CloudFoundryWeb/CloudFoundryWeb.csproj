@@ -349,7 +349,6 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
-    <Compile Include="Controllers\AttendeesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
@@ -359,6 +358,7 @@
     <Compile Include="Models\AttendeeContext.cs" />
     <Compile Include="Models\AttendeeModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Controllers\AttendeesController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\AttendeeContext-20180722194923.mdf" />
@@ -422,6 +422,11 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Attendees\Create.cshtml" />
+    <Content Include="Views\Attendees\Delete.cshtml" />
+    <Content Include="Views\Attendees\Details.cshtml" />
+    <Content Include="Views\Attendees\Edit.cshtml" />
+    <Content Include="Views\Attendees\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

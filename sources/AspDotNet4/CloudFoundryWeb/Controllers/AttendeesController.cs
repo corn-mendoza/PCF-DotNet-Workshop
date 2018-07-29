@@ -2,118 +2,117 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
-using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net;
-using System.Net.Http;
-using System.Web.Http;
-using System.Web.Http.Description;
+using System.Web;
+using System.Web.Mvc;
 using CloudFoundryWeb.Models;
 
 namespace CloudFoundryWeb.Controllers
 {
-    public class AttendeesController : ApiController
+    public class AttendeesController : Controller
     {
         private AttendeeContext db = new AttendeeContext();
 
-        // GET: api/Attendees
-        public IQueryable<AttendeeModel> GetAttendeeModels()
+        // GET: Attendees
+        public ActionResult Index()
         {
-            return db.AttendeeModels;
+            return View(db.AttendeeModels.ToList());
         }
 
-        // GET: api/Attendees/5
-        [ResponseType(typeof(AttendeeModel))]
-        public IHttpActionResult GetAttendeeModel(int id)
+        // GET: Attendees/Details/5
+        public ActionResult Details(int? id)
         {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
             AttendeeModel attendeeModel = db.AttendeeModels.Find(id);
             if (attendeeModel == null)
             {
-                return NotFound();
+                return HttpNotFound();
             }
-
-            return Ok(attendeeModel);
+            return View(attendeeModel);
         }
 
-        // PUT: api/Attendees/5
-        [ResponseType(typeof(void))]
-        public IHttpActionResult PutAttendeeModel(int id, AttendeeModel attendeeModel)
+        // GET: Attendees/Create
+        public ActionResult Create()
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
+            return View();
+        }
 
-            if (id != attendeeModel.Id)
+        // POST: Attendees/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create([Bind(Include = "Id,Name,Email,Title,Department")] AttendeeModel attendeeModel)
+        {
+            if (ModelState.IsValid)
             {
-                return BadRequest();
-            }
-
-            db.Entry(attendeeModel).State = EntityState.Modified;
-
-            try
-            {
+                db.AttendeeModels.Add(attendeeModel);
                 db.SaveChanges();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!AttendeeModelExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
+                return RedirectToAction("Index");
             }
 
-            return StatusCode(HttpStatusCode.NoContent);
+            return View(attendeeModel);
         }
 
-        // POST: api/Attendees
-        [ResponseType(typeof(AttendeeModel))]
-        public IHttpActionResult PostAttendeeModel(AttendeeModel attendeeModel)
+        // GET: Attendees/Edit/5
+        public ActionResult Edit(int? id)
         {
-            if (!ModelState.IsValid)
+            if (id == null)
             {
-                return BadRequest(ModelState);
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-
-            db.AttendeeModels.Add(attendeeModel);
-
-            try
-            {
-                db.SaveChanges();
-            }
-            catch (DbUpdateException)
-            {
-                if (AttendeeModelExists(attendeeModel.Id))
-                {
-                    return Conflict();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return CreatedAtRoute("DefaultApi", new { id = attendeeModel.Id }, attendeeModel);
-        }
-
-        // DELETE: api/Attendees/5
-        [ResponseType(typeof(AttendeeModel))]
-        public IHttpActionResult DeleteAttendeeModel(int id)
-        {
             AttendeeModel attendeeModel = db.AttendeeModels.Find(id);
             if (attendeeModel == null)
             {
-                return NotFound();
+                return HttpNotFound();
             }
+            return View(attendeeModel);
+        }
 
+        // POST: Attendees/Edit/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit([Bind(Include = "Id,Name,Email,Title,Department")] AttendeeModel attendeeModel)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(attendeeModel).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(attendeeModel);
+        }
+
+        // GET: Attendees/Delete/5
+        public ActionResult Delete(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            AttendeeModel attendeeModel = db.AttendeeModels.Find(id);
+            if (attendeeModel == null)
+            {
+                return HttpNotFound();
+            }
+            return View(attendeeModel);
+        }
+
+        // POST: Attendees/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            AttendeeModel attendeeModel = db.AttendeeModels.Find(id);
             db.AttendeeModels.Remove(attendeeModel);
             db.SaveChanges();
-
-            return Ok(attendeeModel);
+            return RedirectToAction("Index");
         }
 
         protected override void Dispose(bool disposing)
@@ -123,11 +122,6 @@ namespace CloudFoundryWeb.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
-        }
-
-        private bool AttendeeModelExists(int id)
-        {
-            return db.AttendeeModels.Count(e => e.Id == id) > 0;
         }
     }
 }
