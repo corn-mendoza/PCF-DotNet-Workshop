@@ -1,4 +1,4 @@
-﻿using Pivotal.Workshop;
+﻿using Pivotal.Helper;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -16,31 +16,8 @@ namespace CloudFoundryWeb.Models
         // For more information refer to the documentation:
         // http://msdn.microsoft.com/en-us/data/jj591621.aspx
     
-        public AttendeeContext() : base(ConnectionString)
+        public AttendeeContext() : base("Name=AttendeeContext")
         {
-        }
-
-        public static string ConnectionString
-        {
-            get
-            {
-                try
-                {
-                    CFEnvironmentVariables _env = new CFEnvironmentVariables(ApplicationConfig.Configuration);
-                    var _connect = _env.getConnectionStringForDbService("user-provided", "AttendeeContext");
-                    if (!string.IsNullOrEmpty(_connect))
-                    {
-                        Console.WriteLine($"Using UPS: '{_connect}' for connection");
-                        return _connect;
-                    }
-                }
-                catch { }
-
-                var _s = System.Configuration.ConfigurationManager.ConnectionStrings["AttendeeContext"].ConnectionString;
-                Console.WriteLine($"Using web.config: '{_s}' for connection");
-
-                return _s;
-            }
         }
 
         public System.Data.Entity.DbSet<CloudFoundryWeb.Models.AttendeeModel> AttendeeModels { get; set; }

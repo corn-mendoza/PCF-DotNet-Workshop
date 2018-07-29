@@ -19,7 +19,11 @@ namespace CloudFoundryWeb
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-            ApplicationConfig.Configure("development");
+            var _env = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
+            if (string.IsNullOrEmpty(_env))
+                _env = "development";
+
+            ApplicationConfig.Configure(_env);
             ApplicationConfig.ConfigureLogging();
 
             ManagementConfig.ConfigureManagementActuators(

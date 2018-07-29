@@ -1,10 +1,13 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Console;
+using Pivotal.Helper;
 using Steeltoe.Extensions.Configuration.CloudFoundry;
 using Steeltoe.Extensions.Logging;
 using System;
+using System.Configuration;
 using System.IO;
+using System.Linq;
 
 namespace CloudFoundryWeb
 {
@@ -26,6 +29,32 @@ namespace CloudFoundryWeb
                 .AddCloudFoundry();
 
             Configuration = builder.Build();
+
+            UpdateConnectionStrings();
+        }
+
+        private static void UpdateConnectionStrings()
+        {
+            var _se = ConfigurationManager.ConnectionStrings.GetEnumerator();
+            
+            while (_se.Current != null)
+            {
+                ConnectionStringSettings _item = (ConnectionStringSettings)_se.Current;
+                var _t = CFEnvironmentVariables.GetConfigurationConnectionString(Configuration, _item.Name);
+                if (!string.IsNullOrEmpty(_t))
+                {
+                    Console.WriteLine($"Pre updating connection string: {_item.ConnectionString}");
+
+                    _item.ConnectionString = _t;
+
+                    Console.WriteLine($"Post updating connection string: {_item.ConnectionString}");
+
+                }
+
+                _se.MoveNext();
+            }
+
+            CFEnvironmentVariables.UpdateConnectionStrings(Configuration);
         }
 
         public static void ConfigureLogging()

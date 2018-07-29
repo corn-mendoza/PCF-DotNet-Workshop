@@ -1,24 +1,18 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json.Linq;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
-namespace Pivotal.Workshop
+namespace Pivotal.Helper
 {
     public class CFEnvironmentVariables
     {
-        private IConfigurationRoot _configuration { get; set; }
         public dynamic vcap_services_data { get; set; }
         public dynamic vcap_application_data { get; set; }
 
-        public CFEnvironmentVariables(IConfigurationRoot configuration)
+        public CFEnvironmentVariables()
         {
-            _configuration = configuration;
-
-            string raw_vcap_app = _configuration["VCAP_APPLICATION"];
-            string raw_vcap_services = _configuration["VCAP_SERVICES"];
+            string raw_vcap_app = Environment.GetEnvironmentVariable("VCAP_APPLICATION");
+            string raw_vcap_services = Environment.GetEnvironmentVariable("VCAP_SERVICES");
 
             // If there's a vcap services entry, parse to a dynamic JObject;
             if (raw_vcap_services != null)
@@ -99,17 +93,25 @@ namespace Pivotal.Workshop
 
                 if (Object.ReferenceEquals(null, serviceInfo) == false)
                 {
-                    // Default to use a Basic MS SQL Server connection string, if our formatter was not specified.
-                    if (formatter == null)
-                        formatter = new BasicSQLServerConnectionStringFormatter();
+                    var cstring = Convert.ToString(serviceInfo.credentials.connectionstring);
+                    if (string.IsNullOrEmpty(cstring))
+                    {
+                        // Default to use a Basic MS SQL Server connection string, if our formatter was not specified.
+                        if (formatter == null)
+                            formatter = new BasicSQLServerConnectionStringFormatter();
 
-                    var host = Convert.ToString(serviceInfo.credentials.sqlServerFullyQualifiedDomainName);
-                    var username = Convert.ToString(serviceInfo.credentials.databaseLogin);
-                    var password = Convert.ToString(serviceInfo.credentials.databaseLoginPassword);
-                    //var port = Convert.ToString(serviceInfo.credentials.port);
-                    var databaseName = Convert.ToString(serviceInfo.credentials.sqldbName);
+                        var host = Convert.ToString(serviceInfo.credentials.sqlServerFullyQualifiedDomainName);
+                        var username = Convert.ToString(serviceInfo.credentials.databaseLogin);
+                        var password = Convert.ToString(serviceInfo.credentials.databaseLoginPassword);
+                        //var port = Convert.ToString(serviceInfo.credentials.port);
+                        var databaseName = Convert.ToString(serviceInfo.credentials.sqldbName);
 
-                    connectionString = formatter.Format(host, username, password, databaseName, "1433");
+                        connectionString = formatter.Format(host, username, password, databaseName, "1433");
+                    }
+                    else
+                    {
+                        connectionString = cstring;
+                    }
                 }
             }
             return connectionString;
@@ -125,17 +127,26 @@ namespace Pivotal.Workshop
 
                 if (Object.ReferenceEquals(null, serviceInfo) == false)
                 {
-                    // Default to use a Basic MS SQL Server connection string, if our formatter was not specified.
-                    if (formatter == null)
-                        formatter = new BasicSQLServerConnectionStringFormatter();
+                    // If there's a connection string defined, return that directly and do not build a connection string
+                    var cstring = Convert.ToString(serviceInfo.credentials.connectionstring);
+                    if (string.IsNullOrEmpty(cstring))
+                    {
+                        // Default to use a Basic MS SQL Server connection string, if our formatter was not specified.
+                        if (formatter == null)
+                            formatter = new BasicSQLServerConnectionStringFormatter();
 
-                    var host = Convert.ToString(serviceInfo.credentials.hostname);
-                    var username = Convert.ToString(serviceInfo.credentials.username);
-                    var password = Convert.ToString(serviceInfo.credentials.password);
-                    var port = Convert.ToString(serviceInfo.credentials.port);
-                    var databaseName = Convert.ToString(serviceInfo.credentials.name);
+                        var host = Convert.ToString(serviceInfo.credentials.hostname);
+                        var username = Convert.ToString(serviceInfo.credentials.username);
+                        var password = Convert.ToString(serviceInfo.credentials.password);
+                        var port = Convert.ToString(serviceInfo.credentials.port);
+                        var databaseName = Convert.ToString(serviceInfo.credentials.name);
 
-                    connectionString = formatter.Format(host, username, password, databaseName, port);
+                        connectionString = formatter.Format(host, username, password, databaseName, port);
+                    }
+                    else
+                    {
+                        connectionString = cstring;
+                    }
                 }
             }
             return connectionString;
@@ -215,6 +226,46 @@ namespace Pivotal.Workshop
                 }
             }
             return null;
+        }
+
+        /// <summary>
+        /// Updates the connection strings with a User Provided Service of the same name
+        /// </summary>
+        /// <param name="configuration">The configuration.</param>
+        public static void UpdateConnectionStrings(IConfiguration configuration)
+        {
+            var cstrings = configuration.GetSection("ConnectionStrings");
+            foreach (var s in cstrings.GetChildren())
+            {
+                Console.WriteLine($"{s.Key} : {s.Value}");
+                var newConnect = GetConfigurationConnectionString(configuration, s.Key);
+            }
+        }
+
+        /// <summary>
+        /// Gets the configuration connection string.
+        /// </summary>
+        /// <param name="configuration">The configuration.</param>
+        /// <param name="dbName">Name of the database.</param>
+        /// <returns></returns>
+        public static string GetConfigurationConnectionString(IConfiguration configuration, string dbName)
+        {
+            // Use the Bound Service for connection string if it is found in a User Provided Service
+            string sourceString = "appsettings.json/Config Server";
+            string dbString = configuration.GetConnectionString(dbName);
+
+            var cfe = new CFEnvironmentVariables();
+            var _connect = cfe.getConnectionStringForDbService("user-provided", dbName);
+            if (!string.IsNullOrEmpty(_connect))
+            {
+                sourceString = "User Provided Service";
+                configuration.GetSection("ConnectionStrings")[dbName] = _connect;
+                dbString = _connect;
+            }
+
+            Console.WriteLine($"{dbName} using connection string from {sourceString}");
+
+            return dbString;
         }
     }
 
