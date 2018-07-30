@@ -35,26 +35,24 @@ namespace CloudFoundryWeb
 
         private static void UpdateConnectionStrings()
         {
-            var _se = ConfigurationManager.ConnectionStrings.GetEnumerator();
-            
-            while (_se.Current != null)
+            var _se = ConfigurationManager.ConnectionStrings;
+            for (int _i = 0; _i < ConfigurationManager.ConnectionStrings.Count; _i++)
             {
-                ConnectionStringSettings _item = (ConnectionStringSettings)_se.Current;
+                ConnectionStringSettings _item = (ConnectionStringSettings)_se[_i];
                 var _t = CFEnvironmentVariables.GetConfigurationConnectionString(Configuration, _item.Name);
+
+                Console.WriteLine($"*** Processing connection string: {_item.Name}");
+
                 if (!string.IsNullOrEmpty(_t))
                 {
-                    Console.WriteLine($"Pre updating connection string: {_item.ConnectionString}");
+                    Console.WriteLine($"*** Updating connection string {_item.ConnectionString} with {_t}");
 
                     _item.ConnectionString = _t;
-
-                    Console.WriteLine($"Post updating connection string: {_item.ConnectionString}");
-
                 }
 
-                _se.MoveNext();
-            }
+                Console.WriteLine($"*** Using connection string: {_item.ConnectionString}");
 
-            CFEnvironmentVariables.UpdateConnectionStrings(Configuration);
+            }
         }
 
         public static void ConfigureLogging()

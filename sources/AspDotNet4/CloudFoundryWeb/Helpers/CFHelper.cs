@@ -251,7 +251,7 @@ namespace Pivotal.Helper
         public static string GetConfigurationConnectionString(IConfiguration configuration, string dbName)
         {
             // Use the Bound Service for connection string if it is found in a User Provided Service
-            string sourceString = "appsettings.json/Config Server";
+            string sourceString = "appsettings.json/Config Server/web.config";
             string dbString = configuration.GetConnectionString(dbName);
 
             var cfe = new CFEnvironmentVariables();
