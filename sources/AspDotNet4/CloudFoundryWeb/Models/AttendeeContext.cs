@@ -15,9 +15,31 @@ namespace CloudFoundryWeb.Models
         // automatically whenever you change your model schema, please use data migrations.
         // For more information refer to the documentation:
         // http://msdn.microsoft.com/en-us/data/jj591621.aspx
-    
-        public AttendeeContext() : base("Name=AttendeeContext")
+
+        public AttendeeContext() : base(ConnectionString)
         {
+        }
+
+        public static string ConnectionString
+        {
+            get
+            {
+                try
+                {
+                    var _connect = CFEnvironmentVariables.GetConfigurationConnectionString(ApplicationConfig.Configuration, "AttendeeContext");
+                    if (!string.IsNullOrEmpty(_connect))
+                    {
+                        Console.WriteLine($"Using UPS: '{_connect}' for connection");
+                        return _connect;
+                    }
+                }
+                catch { }
+
+                var _s = System.Configuration.ConfigurationManager.ConnectionStrings["AttendeeContext"].ConnectionString;
+                Console.WriteLine($"Using web.config: '{_s}' for connection");
+
+                return _s;
+            }
         }
 
         public System.Data.Entity.DbSet<CloudFoundryWeb.Models.AttendeeModel> AttendeeModels { get; set; }

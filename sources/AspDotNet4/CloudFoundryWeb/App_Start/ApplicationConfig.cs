@@ -30,7 +30,6 @@ namespace CloudFoundryWeb
 
             Configuration = builder.Build();
 
-            UpdateConnectionStrings();
         }
 
         private static void UpdateConnectionStrings()
@@ -47,7 +46,11 @@ namespace CloudFoundryWeb
                 {
                     Console.WriteLine($"*** Updating connection string {_item.ConnectionString} with {_t}");
 
-                    _item.ConnectionString = _t;
+                    var c = new ConnectionStringSettings(_item.Name, _t);
+
+                    _se.Remove(_item);
+                    _se.Add(c);
+                    //_item.ConnectionString = _t;
                 }
 
                 Console.WriteLine($"*** Using connection string: {_item.ConnectionString}");
