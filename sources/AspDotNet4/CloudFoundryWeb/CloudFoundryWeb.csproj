@@ -361,6 +361,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\CFHelper.cs" />
+    <Compile Include="Helpers\SafeTokenHandle.cs" />
     <Compile Include="Models\AttendeeContext.cs" />
     <Compile Include="Models\AttendeeModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
